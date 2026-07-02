@@ -23,4 +23,13 @@ git submodule update --init --recursive
 
 ## Building
 
-Each subfolder contains its own CMake build scripts and can be compiled using the standard CMake workflow.
+From the repository root, configure and build all projects (libshell, then both experiments):
+
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+This produces the `energy-benchmark` and `lateral-buckling` executables under `build/`.
+
+Each subfolder can also be built on its own with the standard CMake workflow after libshell has been built and installed to `libshell/lib/`.

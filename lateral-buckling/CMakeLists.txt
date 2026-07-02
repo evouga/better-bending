@@ -24,10 +24,6 @@ add_executable(${PROJECT_NAME} ${SRCFILES})
 target_include_directories(${PROJECT_NAME} PUBLIC ${EIGEN3_INCLUDE_DIR} ${LIBSHELL_INCLUDE_DIR})
 target_link_libraries(${PROJECT_NAME} ${LIBSHELL_LIB_DIR} igl_restricted::triangle igl::core polyscope)
 
-add_executable(Viewer ${VIEWERFILES})
-target_include_directories(Viewer PUBLIC ${EIGEN3_INCLUDE_DIR} ${LIBSHELL_INCLUDE_DIR})
-target_link_libraries(Viewer ${LIBSHELL_LIB_DIR} igl::core polyscope)
-
 # Use C++14
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 14)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED ON)
