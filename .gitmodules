@@ -1,0 +1,6 @@
+[submodule "libshell"]
+	path = libshell
+	url = https://github.com/evouga/libshell.git
+[submodule "polyscope"]
+	path = polyscope
+	url = https://github.com/nmwsharp/polyscope.git

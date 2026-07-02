@@ -1,6 +1,6 @@
-# Bending Model Verification Benchmark
+# Bending Model Energy Verification Benchmark
 
-This code will run the full test suite of experiments probing the energy convergence behavior of discrete shell models.
+This code will run the full test suite of energy scaling and creased vee experiments in Sections 8 and 9 of our paper.
 
 ## Building and Running
 
@@ -8,7 +8,19 @@ Uses the standard CMake toolchain. Requires:
 - LibShell (https://github.com/evouga/libshell)
 - Polyscope (https://github.com/nmwsharp/polyscope)
 
-The simplest setup is to place these in sibling directories under the same parent as the folder containing this README.
+These dependencies are provided as Git submodules at the repository root. From the repository root, clone with submodules:
+
+```bash
+git clone --recurse-submodules <repository-url>
+```
+
+Or, if you already cloned the repository:
+
+```bash
+git submodule update --init --recursive
+```
+
+The build expects `libshell/` and `polyscope/` as siblings of this directory (see the [repository README](../README.md)).
 
 ## Details
 
