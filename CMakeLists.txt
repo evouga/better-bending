@@ -7,10 +7,11 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 	set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type" FORCE)
 endif()
 
-# Build the libshell library only; examples fetch their own polyscope copy.
-set(LIBSHELL_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-set(LIBSHELL_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-add_subdirectory(libshell)
+list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+
+# Build the libshell library only (skip libshell examples; they FetchContent polyscope).
+include(Libshell)
+better_bending_add_libshell()
 
 find_path(POLYSCOPE_INCLUDE_DIR polyscope/polyscope.h
 	PATHS ${CMAKE_CURRENT_SOURCE_DIR}/polyscope
