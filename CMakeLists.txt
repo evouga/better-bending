@@ -7,7 +7,9 @@ if(NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 	set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build type" FORCE)
 endif()
 
-# Build shared dependencies first.
+# Build the libshell library only; examples fetch their own polyscope copy.
+set(LIBSHELL_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
+set(LIBSHELL_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 add_subdirectory(libshell)
 
 find_path(POLYSCOPE_INCLUDE_DIR polyscope/polyscope.h
