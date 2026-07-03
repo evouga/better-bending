@@ -24,10 +24,4 @@ The build expects `libshell/` and `polyscope/` as siblings of this directory (se
 
 ## Details
 
-The code outputs the results in log.txt. Each row tests one w/L, Gamma\* pair and is of the format:
-
-```
-w/L: BAC lateral displacement, QB(PL) lateral displacement, QB(CR) lateral displacement.
-```
-
-The full simulation will take several hours to finish.
+The code outputs the results in log.txt. The full simulation will take several hours to finish.
